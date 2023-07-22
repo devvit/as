@@ -24,6 +24,7 @@ for distfile in $(ls ./etc/*.dist); do
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.BG(\s*)=/NpcBot.Enable.BG = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Arena(\s*)=/NpcBot.Enable.Arena = 1 #/g' $f
+    perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 10 #/g' $f
     perl -pi -e 's/^NpcBot.WanderingBots.BG.Enable(\s*)=/NpcBot.WanderingBots.BG.Enable = 1 #/g' $f
 done
 
@@ -79,8 +80,11 @@ GainHonorGuard.Announce = 1
 
 AuctionHouseBot.EnableSeller = 1
 AuctionHouseBot.EnableBuyer = 1
+AuctionHouseBot.UseBuyPriceForSeller = 0
+AuctionHouseBot.UseBuyPriceForBuyer = 0
 AuctionHouseBot.Account = 3
 AuctionHouseBot.GUID = 1
+AuctionHouseBot.ItemsPerCycle = 200
 EOF
 
 # node test.js 'account create hanmeimei helloworld'
