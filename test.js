@@ -57,9 +57,4 @@ function AzerothCore_Soap(command) {
   });
 }
 
-function GenSQL() {
-  
-}
-
 // AzerothCore_Soap(process.argv[2]).then((x) => console.log(x));
-

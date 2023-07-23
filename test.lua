@@ -1,5 +1,5 @@
 
-    PROFESSION_DATA.WRATH = {
+    local PROFESSION_DATA = {
 		[2166] = {2314,3,125,145,170,{2319,4231,2321},{10,6,2}},
 		[2543] = {733,6,50,115,155,{729,730,731},{1,1,1},5},
 		[2548] = {2685,6,110,130,170,{2677},{2}},
@@ -1853,3 +1853,16 @@
 		[72953] = {52021,9,450,440,460,{37703},{2},1000},
 		[75597] = {54797,8,425,435,455,{41594,41595,41593,43102},{1,1,1,4}},
     }
+
+    local cjson = require('cjson')
+
+    local a ={}
+    for _, v in pairs(PROFESSION_DATA) do
+	    if v[1] ~= nil then 
+		    table.insert(a,v[1])
+	    end
+    end
+
+  local fp = io.open('test.json', 'w')
+  fp:write(cjson.encode(a))
+  io.close(fp)
