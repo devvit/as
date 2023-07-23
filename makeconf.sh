@@ -34,18 +34,13 @@ https://github.com/azerothcore/mod-1v1-arena
 https://github.com/azerothcore/mod-ah-bot
 https://github.com/azerothcore/mod-aoe-loot
 https://github.com/azerothcore/mod-better-item-reloading
-https://github.com/azerothcore/mod-congrats-on-level
 https://github.com/azerothcore/mod-eluna
-https://github.com/azerothcore/mod-gain-honor-guard
 https://github.com/azerothcore/mod-keep-out
 https://github.com/azerothcore/mod-learn-highest-talent
 https://github.com/azerothcore/mod-learn-spells
 https://github.com/azerothcore/mod-random-enchants
-https://github.com/azerothcore/mod-rdf-expansion
-https://github.com/azerothcore/mod-reward-shop
 https://github.com/azerothcore/mod-skip-dk-starting-area
 https://github.com/azerothcore/mod-solo-lfg
-https://github.com/azerothcore/mod-top-arena
 https://github.com/trickerer/mod-autobalance
 '
 
