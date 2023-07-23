@@ -31,7 +31,15 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^NpcBot.WanderingBots.BG.Enable(\s*)=/NpcBot.WanderingBots.BG.Enable = 1 #/g' $f
 
     perl -pi -e 's/^AOELoot.MailEnable(\s*)=/AOELoot.MailEnable = 0 #/g' $f
+
+    perl -pi -e 's/^AuctionHouseBot.EnableSeller(\s*)=/AuctionHouseBot.EnableSeller = 1 #/g' $f
+    perl -pi -e 's/^AuctionHouseBot.EnableBuyer(\s*)=/AuctionHouseBot.EnableBuyer = 0 #/g' $f
+    perl -pi -e 's/^AuctionHouseBot.Account(\s*)=/AuctionHouseBot.Account = 3 #/g' $f
+    perl -pi -e 's/^AuctionHouseBot.GUID(\s*)=/AuctionHouseBot.GUID = 3 #/g' $f
+    perl -pi -e 's/^AuctionHouseBot.ItemsPerCycle(\s*)=/AuctionHouseBot.ItemsPerCycle = 2000 #/g' $f
 done
+
+echo 'LearnSpells.OnFirstLogin = 0' >>./etc/modules/mod_learnspells.conf
 
 mods='
 https://github.com/azerothcore/mod-1v1-arena
@@ -51,3 +59,6 @@ https://github.com/trickerer/mod-autobalance
 # node test.js 'account create hanmeimei helloworld'
 # node test.js 'account set gmlevel hanmeimei 3 -1'
 # ('a'..'z').to_a.sample(12).join
+
+# ahbotoptions minitems 2 10000
+# ahbotoptions maxitems 2 10000
