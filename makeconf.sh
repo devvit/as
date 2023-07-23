@@ -32,8 +32,12 @@ for distfile in $(ls ./etc/**/*.dist); do
 
     perl -pi -e 's/^AOELoot.MailEnable(\s*)=/AOELoot.MailEnable = 0 #/g' $f
 
+    # perl -pi -e 's/^AuctionHouseBot.DEBUG(\s*)=/AuctionHouseBot.DEBUG = 1 #/g' $f
+    # perl -pi -e 's/^AuctionHouseBot.DEBUG_FILTERS(\s*)=/AuctionHouseBot.DEBUG_FILTERS = 1 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.EnableSeller(\s*)=/AuctionHouseBot.EnableSeller = 1 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.EnableBuyer(\s*)=/AuctionHouseBot.EnableBuyer = 0 #/g' $f
+    # perl -pi -e 's/^AuctionHouseBot.UseBuyPriceForSeller(\s*)=/AuctionHouseBot.UseBuyPriceForSeller = 0 #/g' $f
+    # perl -pi -e 's/^AuctionHouseBot.UseBuyPriceForBuyer(\s*)=/AuctionHouseBot.UseBuyPriceForBuyer = 0 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.Account(\s*)=/AuctionHouseBot.Account = 3 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.GUID(\s*)=/AuctionHouseBot.GUID = 3 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.ItemsPerCycle(\s*)=/AuctionHouseBot.ItemsPerCycle = 2000 #/g' $f
