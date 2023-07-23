@@ -60,5 +60,6 @@ https://github.com/trickerer/mod-autobalance
 # node test.js 'account set gmlevel hanmeimei 3 -1'
 # ('a'..'z').to_a.sample(12).join
 
-# ahbotoptions minitems 2 10000
-# ahbotoptions maxitems 2 10000
+# ahbotoptions minitems 2 20000
+# ahbotoptions maxitems 2 20000
+# ahbotoptions percentages 2 0 15 5 15 15 0 0 0 15 5 15 15 0 0
