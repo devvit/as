@@ -10,7 +10,7 @@ function AzerothCore_Soap(command) {
         port: 7878,
         method: 'POST',
         hostname: '127.0.0.1',
-        auth: 'starcraft:showmethemoney',
+        auth: 'admin0:adminpwd',
         headers: { 'Content-Type': 'application/xml' },
       },
       (res) => {
