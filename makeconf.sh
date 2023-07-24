@@ -2,7 +2,7 @@
 
 shopt -s globstar
 
-whiz=100
+zoom=100
 
 for distfile in $(ls ./etc/**/*.dist); do
     f=$(dirname $distfile)/$(basename $distfile .dist)
@@ -12,16 +12,16 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^DataDir(\s*)=/DataDir = ".\/data" #/g' $f
     perl -pi -e 's/^SOAP.Enabled(\s*)=/SOAP.Enabled = 1 #/g' $f
 
-    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $whiz #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $whiz #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $whiz #/g" $f
-    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $whiz #/g" $f
-    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $whiz #/g" $f
+    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $zoom #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $zoom #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $zoom #/g" $f
+    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $zoom #/g" $f
+    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $zoom #/g" $f
 
-    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $whiz #/g" $f
-    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $whiz #/g" $f
+    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $zoom #/g" $f
+    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $zoom #/g" $f
 
-    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $whiz #/g" $f
+    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $zoom #/g" $f
 
     perl -pi -e 's/^NpcBot.MaxBots(\s*)=/NpcBot.MaxBots = 39 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
