@@ -43,7 +43,7 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^AuctionHouseBot.ItemsPerCycle(\s*)=/AuctionHouseBot.ItemsPerCycle = 2000 #/g' $f
 done
 
-echo 'LearnSpells.OnFirstLogin = 0' >>./etc/modules/mod_learnspells.conf
+echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
 
 mods='
 https://github.com/azerothcore/mod-1v1-arena
