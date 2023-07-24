@@ -57,4 +57,4 @@ function AzerothCore_Soap(command) {
   });
 }
 
-// AzerothCore_Soap(process.argv[2]).then((x) => console.log(x));
+AzerothCore_Soap(process.argv[2]).then((x) => console.log(x));

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "unique-names-generator": "^4.7.1",
     "xml2js": "^0.6.0"
   }
 }
