@@ -6,4 +6,4 @@ mysql -u root -S /tmp/mysql.8 \
     acore_world <../AzerothCore-wotlk-with-NPCBots/modules/mod-random-enchants/sql/world/item_enchatment_random_tiers.sql
 # mysql -u root -S /tmp/mysql.8 \
 #     acore_world <../AzerothCore-wotlk-with-NPCBots/modules/mod-item-level-up/sql/world/mod_levelitem.sql
-# mysql -u root -S /tmp/mysql.8 acore_world <custom.sql
+mysql -u root -S /tmp/mysql.8 acore_world <custom.sql
