@@ -16,6 +16,7 @@ const customConfig = {
   dictionaries: [adjectives, colors, animals],
   separator: '',
   style: 'capital',
+  length: 3,
 };
 
 function genBots() {
@@ -24,7 +25,7 @@ function genBots() {
 
 const a = [];
 for (let i = 0; i < 500; i++) {
-  const _name = genBots();
+  const _name = genBots().substring(0, 11);
   const _class = random_item([1, 2, 3, 4, 5, 6, 7, 8, 9.11]);
   const _race = random_item([1, 2, 3, 4, 5, 6, 7, 8, 10, 11]);
   const _gender = random_item([0, 1]);
