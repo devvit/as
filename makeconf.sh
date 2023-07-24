@@ -27,7 +27,7 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.BG(\s*)=/NpcBot.Enable.BG = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Arena(\s*)=/NpcBot.Enable.Arena = 1 #/g' $f
-    perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 99 #/g' $f
+    perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 50 #/g' $f
     perl -pi -e 's/^NpcBot.WanderingBots.BG.Enable(\s*)=/NpcBot.WanderingBots.BG.Enable = 1 #/g' $f
 
     perl -pi -e 's/^AOELoot.MailEnable(\s*)=/AOELoot.MailEnable = 0 #/g' $f
@@ -65,6 +65,8 @@ https://github.com/trickerer/mod-autobalance
 # node test.js 'account create hanmeimei helloworld'
 # node test.js 'account set gmlevel hanmeimei 3 -1'
 # ('a'..'z').to_a.sample(12).join
+
+# .npcbot createnew Selendris 11 4 1 6 4 3 2 4
 
 # run for i=70001,70100 do SendChatMessage('.npcb spawn '..i) end # Winterspring
 # run for i=70101,70200 do SendChatMessage('.npcb spawn '..i) end # Hyjal
