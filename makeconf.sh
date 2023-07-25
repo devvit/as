@@ -49,8 +49,12 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^ModBGItemReward.Enable(\s*)=/ModBGItemReward.Enable = 1 #/g' $f
     perl -pi -e 's/^ModBGItemReward.ABWinItems(\s*)=/ModBGItemReward.ABWinItems = "49426:100" #/g' $f
     perl -pi -e 's/^ModBGItemReward.ABDefeatItems(\s*)=/ModBGItemReward.ABDefeatItems = "49426:10" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = "43307:100" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.WSGDefeatItems(\s*)=/ModBGItemReward.WSGDefeatItems = "43307:10" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = "49426:100" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.WSGDefeatItems(\s*)=/ModBGItemReward.WSGDefeatItems = "49426:10" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.AVWinItems(\s*)=/ModBGItemReward.AVWinItems = "49426:100" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.AVDefeatItems(\s*)=/ModBGItemReward.AVDefeatItems = "49426:10" #/g' $f
+
+    perl -pi -e 's/^ModCTASwitch.Enable(\s*)=/ModCTASwitch.Enable = 1 #/g' $f
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
@@ -61,6 +65,7 @@ https://github.com/azerothcore/mod-ah-bot
 https://github.com/azerothcore/mod-aoe-loot
 https://github.com/azerothcore/mod-better-item-reloading
 https://github.com/azerothcore/mod-eluna
+https://github.com/azerothcore/mod-cta-switch
 https://github.com/azerothcore/mod-item-level-up
 https://github.com/azerothcore/mod-keep-out
 https://github.com/azerothcore/mod-learn-highest-talent
