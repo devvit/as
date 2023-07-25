@@ -22,6 +22,8 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $zoom #/g" $f
 
     perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $zoom #/g" $f
+    perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $zoom #/g" $f
+    perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $zoom #/g" $f
 
     perl -pi -e 's/^NpcBot.MaxBots(\s*)=/NpcBot.MaxBots = 39 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
@@ -57,12 +59,16 @@ https://github.com/azerothcore/mod-item-level-up
 https://github.com/azerothcore/mod-keep-out
 https://github.com/azerothcore/mod-learn-highest-talent
 https://github.com/azerothcore/mod-learn-spells
+https://github.com/azerothcore/mod-npc-free-professions
 https://github.com/azerothcore/mod-promotion-azerothcore
 https://github.com/azerothcore/mod-random-enchants
 https://github.com/azerothcore/mod-skip-dk-starting-area
 https://github.com/azerothcore/mod-solo-lfg
 https://github.com/trickerer/mod-autobalance
 '
+
+# 199999 pro
+# 70000 hire
 
 # node test.js 'account create hanmeimei helloworld'
 # node test.js 'account set gmlevel hanmeimei 3 -1'
