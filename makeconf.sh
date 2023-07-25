@@ -41,6 +41,8 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^AuctionHouseBot.Account(\s*)=/AuctionHouseBot.Account = 3 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.GUID(\s*)=/AuctionHouseBot.GUID = 3 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.ItemsPerCycle(\s*)=/AuctionHouseBot.ItemsPerCycle = 2000 #/g' $f
+
+    perl -pi -e 's/^Arena1v1.BlockForbiddenTalents(\s*)=/Arena1v1.BlockForbiddenTalents = 0 #/g' $f
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
