@@ -22,8 +22,8 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $zoom #/g" $f
 
     perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $zoom #/g" $f
-    perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $zoom #/g" $f
-    perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $zoom #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $zoom #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $zoom #/g" $f
 
     perl -pi -e 's/^NpcBot.MaxBots(\s*)=/NpcBot.MaxBots = 39 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
@@ -45,6 +45,12 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^AuctionHouseBot.ItemsPerCycle(\s*)=/AuctionHouseBot.ItemsPerCycle = 2000 #/g' $f
 
     perl -pi -e 's/^Arena1v1.BlockForbiddenTalents(\s*)=/Arena1v1.BlockForbiddenTalents = 0 #/g' $f
+
+    perl -pi -e 's/^ModBGItemReward.Enable(\s*)=/ModBGItemReward.Enable = 1 #/g' $f
+    perl -pi -e 's/^ModBGItemReward.ABWinItems(\s*)=/ModBGItemReward.ABWinItems = "49426:100" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.ABDefeatItems(\s*)=/ModBGItemReward.ABDefeatItems = "49426:10" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = "43307:100" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.WSGDefeatItems(\s*)=/ModBGItemReward.WSGDefeatItems = "43307:10" #/g' $f
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
