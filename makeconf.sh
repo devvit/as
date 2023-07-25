@@ -59,6 +59,7 @@ https://github.com/azerothcore/mod-item-level-up
 https://github.com/azerothcore/mod-keep-out
 https://github.com/azerothcore/mod-learn-highest-talent
 https://github.com/azerothcore/mod-learn-spells
+https://github.com/azerothcore/mod-bg-item-reward
 https://github.com/azerothcore/mod-npc-free-professions
 https://github.com/azerothcore/mod-promotion-azerothcore
 https://github.com/azerothcore/mod-random-enchants

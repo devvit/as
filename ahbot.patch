@@ -1,0 +1,33 @@
+diff --git a/src/AuctionHouseBot.cpp b/src/AuctionHouseBot.cpp
+index 8ce56cb..bb1bb49 100644
+--- a/src/AuctionHouseBot.cpp
++++ b/src/AuctionHouseBot.cpp
+@@ -398,6 +398,9 @@ void AuctionHouseBot::addNewAuctions(Player *AHBplayer, AHBConfig *config)
+                 continue;
+             }
+ 
++            if (buyoutPrice == 0) buyoutPrice += 1000000;
++            if (bidPrice == 0) bidPrice += 1000000;
++
+             uint32 etime = urand(1,3);
+             switch(etime)
+             {
+@@ -1316,6 +1319,18 @@ void AuctionHouseBot::Initialize()
+             }
+         }
+ 
++        QueryResult proResults = WorldDatabase.Query("SELECT item FROM `mod_auctionhousebot_pro_items`");
++        if (proResults)
++        {
++            greenTradeGoodsBin.clear();
++            do
++            {
++                Field* fields = proResults->Fetch();
++                greenTradeGoodsBin.push_back(fields[0].Get<uint32>());
++
++            } while (proResults->NextRow());
++        }
++
+         if ((greyTradeGoodsBin.size() == 0) &&
+             (whiteTradeGoodsBin.size() == 0) &&
+             (greenTradeGoodsBin.size() == 0) &&
