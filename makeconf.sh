@@ -3,6 +3,9 @@
 shopt -s globstar
 
 zoom=100
+winitems='\"49426:300 47241:300 45624:300 40753:300 40752:300 29434:300\"'
+defitems='\"49426:200 47241:200 45624:200 40753:200 40752:200 29434:200\"'
+tieitems='\"49426:100 47241:100 45624:100 40753:100 40752:100 29434:100\"'
 
 for distfile in $(ls ./etc/**/*.dist); do
     f=$(dirname $distfile)/$(basename $distfile .dist)
@@ -46,12 +49,15 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^Arena1v1.BlockForbiddenTalents(\s*)=/Arena1v1.BlockForbiddenTalents = 0 #/g' $f
 
     perl -pi -e 's/^ModBGItemReward.Enable(\s*)=/ModBGItemReward.Enable = 1 #/g' $f
-    perl -pi -e 's/^ModBGItemReward.ABWinItems(\s*)=/ModBGItemReward.ABWinItems = "49426:100" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.ABDefeatItems(\s*)=/ModBGItemReward.ABDefeatItems = "49426:10" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = "49426:100 47241:100" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.WSGDefeatItems(\s*)=/ModBGItemReward.WSGDefeatItems = "49426:10 47241:10" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.AVWinItems(\s*)=/ModBGItemReward.AVWinItems = "49426:100" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.AVDefeatItems(\s*)=/ModBGItemReward.AVDefeatItems = "49426:10" #/g' $f
+    perl -pi -e "s/^ModBGItemReward.ABWinItems(\s*)=/ModBGItemReward.ABWinItems = $winitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = $winitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.AVWinItems(\s*)=/ModBGItemReward.AVWinItems = $winitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.ABDefeatItems(\s*)=/ModBGItemReward.ABDefeatItems = $defitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.WSGDefeatItems(\s*)=/ModBGItemReward.WSGDefeatItems = $defitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.AVDefeatItems(\s*)=/ModBGItemReward.AVDefeatItems = $defitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.ABTieItems(\s*)=/ModBGItemReward.ABTieItems = $tieitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.WSGTieItems(\s*)=/ModBGItemReward.WSGTieItems = $tieitems #/g" $f
+    perl -pi -e "s/^ModBGItemReward.AVTieItems(\s*)=/ModBGItemReward.AVTieItems = $tieitems #/g" $f
 
     perl -pi -e 's/^ModCTASwitch.Enable(\s*)=/ModCTASwitch.Enable = 1 #/g' $f
 done
