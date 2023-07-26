@@ -6,6 +6,8 @@ $conn = new SoapClient(null, [
     'login' => 'xianyu',
     'password' => 'alibaba',
 ]);
-echo $conn->executeCommand(new SoapParam('account create foobar helloworld', 'command'));
+echo $conn->executeCommand(
+    new SoapParam('account create foobar helloworld', 'command')
+);
 
 ?>

@@ -1,9 +1,14 @@
 --
 
-local PLAYER_EVENT_ON_KILL_CREATURE = 7
-
-local function HelloFn(event, killer, killed)
-	killer:SendBroadcastMessage("kill you")
+function reloadElunaEngine(event, player, command)
+	if command == "reload scripts" or command == "reloadscripts" then
+		ReloadEluna()
+	end
 end
 
--- RegisterPlayerEvent(PLAYER_EVENT_ON_KILL_CREATURE, HelloFn)
+function testFn(event, player, enemy)
+	player:Say("combat with : " .. enemy:GetName(), 0)
+end
+
+-- RegisterPlayerEvent(9, testFn)
+RegisterPlayerEvent(42, reloadElunaEngine)
