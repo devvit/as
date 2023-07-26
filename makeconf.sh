@@ -31,6 +31,7 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^NpcBot.Enable.Arena(\s*)=/NpcBot.Enable.Arena = 1 #/g' $f
     perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 100 #/g' $f
     perl -pi -e 's/^NpcBot.WanderingBots.BG.Enable(\s*)=/NpcBot.WanderingBots.BG.Enable = 1 #/g' $f
+    perl -pi -e 's/^NpcBot.Botgiver.FilterRaces(\s*)=/NpcBot.Botgiver.FilterRaces = 1 #/g' $f
 
     perl -pi -e 's/^AOELoot.MailEnable(\s*)=/AOELoot.MailEnable = 0 #/g' $f
 
@@ -38,8 +39,6 @@ for distfile in $(ls ./etc/**/*.dist); do
     # perl -pi -e 's/^AuctionHouseBot.DEBUG_FILTERS(\s*)=/AuctionHouseBot.DEBUG_FILTERS = 1 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.EnableSeller(\s*)=/AuctionHouseBot.EnableSeller = 1 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.EnableBuyer(\s*)=/AuctionHouseBot.EnableBuyer = 0 #/g' $f
-    # perl -pi -e 's/^AuctionHouseBot.UseBuyPriceForSeller(\s*)=/AuctionHouseBot.UseBuyPriceForSeller = 0 #/g' $f
-    # perl -pi -e 's/^AuctionHouseBot.UseBuyPriceForBuyer(\s*)=/AuctionHouseBot.UseBuyPriceForBuyer = 0 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.Account(\s*)=/AuctionHouseBot.Account = 3 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.GUID(\s*)=/AuctionHouseBot.GUID = 3 #/g' $f
     perl -pi -e 's/^AuctionHouseBot.ItemsPerCycle(\s*)=/AuctionHouseBot.ItemsPerCycle = 2000 #/g' $f
@@ -49,8 +48,8 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^ModBGItemReward.Enable(\s*)=/ModBGItemReward.Enable = 1 #/g' $f
     perl -pi -e 's/^ModBGItemReward.ABWinItems(\s*)=/ModBGItemReward.ABWinItems = "49426:100" #/g' $f
     perl -pi -e 's/^ModBGItemReward.ABDefeatItems(\s*)=/ModBGItemReward.ABDefeatItems = "49426:10" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = "49426:100" #/g' $f
-    perl -pi -e 's/^ModBGItemReward.WSGDefeatItems(\s*)=/ModBGItemReward.WSGDefeatItems = "49426:10" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = "49426:100 47241:100" #/g' $f
+    perl -pi -e 's/^ModBGItemReward.WSGDefeatItems(\s*)=/ModBGItemReward.WSGDefeatItems = "49426:10 47241:10" #/g' $f
     perl -pi -e 's/^ModBGItemReward.AVWinItems(\s*)=/ModBGItemReward.AVWinItems = "49426:100" #/g' $f
     perl -pi -e 's/^ModBGItemReward.AVDefeatItems(\s*)=/ModBGItemReward.AVDefeatItems = "49426:10" #/g' $f
 
