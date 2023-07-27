@@ -40,5 +40,5 @@ function testFn(event, player, msg, Type, lang, group)
 	end
 end
 
-RegisterPlayerEvent(20, testFn)
+-- RegisterPlayerEvent(20, testFn)
 RegisterPlayerEvent(42, reloadElunaEngine)
