@@ -3,6 +3,7 @@
 shopt -s globstar
 
 zoom=100
+hard=0.1
 winitems='\"49426:300 47241:300 45624:300 40753:300 40752:300 29434:300\"'
 tieitems='\"49426:200 47241:200 45624:200 40753:200 40752:200 29434:200\"'
 defitems='\"49426:100 47241:100 45624:100 40753:100 40752:100 29434:100\"'
@@ -60,6 +61,15 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e "s/^ModBGItemReward.AVTieItems(\s*)=/ModBGItemReward.AVTieItems = $tieitems #/g" $f
 
     perl -pi -e 's/^ModCTASwitch.Enable(\s*)=/ModCTASwitch.Enable = 1 #/g' $f
+
+    perl -pi -e "s/^AutoBalance.StatModifier.Global(\s*)=/AutoBalance.StatModifier.Global = $hard #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifier.Boss.Global(\s*)=/AutoBalance.StatModifier.Boss.Global = $hard #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierHeroic.Global(\s*)=/AutoBalance.StatModifierHeroic.Global = $hard #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierHeroic.Boss.Global = $hard #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaid.Global(\s*)=/AutoBalance.StatModifierRaid.Global = $hard #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaid.Boss.Global(\s*)=/AutoBalance.StatModifierRaid.Boss.Global = $hard #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Global = $hard #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Boss.Global = $hard #/g" $f
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
