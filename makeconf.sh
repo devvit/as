@@ -21,10 +21,8 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $zoom #/g" $f
     perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $zoom #/g" $f
     perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $zoom #/g" $f
-
     perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $zoom #/g" $f
     perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $zoom #/g" $f
-
     perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $zoom #/g" $f
     # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $zoom #/g" $f
     # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $zoom #/g" $f

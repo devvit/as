@@ -36,7 +36,7 @@ function testFn(event, player, msg, Type, lang, group)
 	}
 	for i = 0, 10 do
 		item:ClearEnchantment(i)
-		item:SetEnchantment(x[i+10], i)
+		item:SetEnchantment(x[i + 10], i)
 	end
 end
 
