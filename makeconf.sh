@@ -2,7 +2,7 @@
 
 shopt -s globstar
 
-grow=100
+pick=100
 hard=1
 winitems='\"49426:300 47241:300 45624:300 40753:300 40752:300 29434:300\"'
 tieitems='\"49426:200 47241:200 45624:200 40753:200 40752:200 29434:200\"'
@@ -16,16 +16,16 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^DataDir(\s*)=/DataDir = ".\/data" #/g' $f
     perl -pi -e 's/^SOAP.Enabled(\s*)=/SOAP.Enabled = 1 #/g' $f
 
-    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $grow #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $grow #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $grow #/g" $f
-    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $grow #/g" $f
-    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $grow #/g" $f
-    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $grow #/g" $f
-    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $grow #/g" $f
-    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $grow #/g" $f
-    # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $grow #/g" $f
-    # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $grow #/g" $f
+    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $pick #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $pick #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $pick #/g" $f
+    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $pick #/g" $f
+    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $pick #/g" $f
+    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $pick #/g" $f
+    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $pick #/g" $f
+    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $pick #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $pick #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $pick #/g" $f
 
     perl -pi -e 's/^NpcBot.MaxBots(\s*)=/NpcBot.MaxBots = 39 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
