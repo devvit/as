@@ -92,16 +92,15 @@ https://github.com/azerothcore/mod-solo-lfg
 https://github.com/trickerer/mod-autobalance
 '
 
-# 199999 pro
+# 100000 promotion
+# 199999 profession
 # 70000 hire
 
 # node test.js 'account create hanmeimei helloworld'
 # node test.js 'account set gmlevel hanmeimei 3 -1'
 # ('a'..'z').to_a.sample(12).join
 
-# .npcbot createnew Selendris 11 4 1 6 4 3 2 4
-
-# run for i=70001,70100 do SendChatMessage('.npcb spawn '..i) end # Winterspring
+# run for i=70800,70100 do SendChatMessage('.npcb spawn '..i) end # Winterspring
 # run for i=70101,70200 do SendChatMessage('.npcb spawn '..i) end # Hyjal
 # run for i=70201,70300 do SendChatMessage('.npcb spawn '..i) end
 # run for i=70301,70400 do SendChatMessage('.npcb spawn '..i) end
