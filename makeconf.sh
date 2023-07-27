@@ -2,8 +2,8 @@
 
 shopt -s globstar
 
-zoom=100
-hard=0.4
+grow=100
+hard=1
 winitems='\"49426:300 47241:300 45624:300 40753:300 40752:300 29434:300\"'
 tieitems='\"49426:200 47241:200 45624:200 40753:200 40752:200 29434:200\"'
 defitems='\"49426:100 47241:100 45624:100 40753:100 40752:100 29434:100\"'
@@ -16,22 +16,22 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^DataDir(\s*)=/DataDir = ".\/data" #/g' $f
     perl -pi -e 's/^SOAP.Enabled(\s*)=/SOAP.Enabled = 1 #/g' $f
 
-    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $zoom #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $zoom #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $zoom #/g" $f
-    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $zoom #/g" $f
-    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $zoom #/g" $f
-    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $zoom #/g" $f
-    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $zoom #/g" $f
-    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $zoom #/g" $f
-    # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $zoom #/g" $f
-    # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $zoom #/g" $f
+    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $grow #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $grow #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $grow #/g" $f
+    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $grow #/g" $f
+    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $grow #/g" $f
+    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $grow #/g" $f
+    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $grow #/g" $f
+    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $grow #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $grow #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $grow #/g" $f
 
     perl -pi -e 's/^NpcBot.MaxBots(\s*)=/NpcBot.MaxBots = 39 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.BG(\s*)=/NpcBot.Enable.BG = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Arena(\s*)=/NpcBot.Enable.Arena = 1 #/g' $f
-    perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 100 #/g' $f
+    perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 400 #/g' $f
     perl -pi -e 's/^NpcBot.WanderingBots.BG.Enable(\s*)=/NpcBot.WanderingBots.BG.Enable = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Botgiver.FilterRaces(\s*)=/NpcBot.Botgiver.FilterRaces = 1 #/g' $f
 

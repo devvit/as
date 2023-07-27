@@ -6,7 +6,7 @@ function reloadElunaEngine(event, player, command)
 	end
 end
 
-function testFn(event, player, msg, Type, lang, group)
+function testFn(event, player, item, bag, slot)
 	player:Say("hello world", 0)
 	local item = player:GetEquippedItemBySlot(15)
 	local x = {
@@ -36,9 +36,9 @@ function testFn(event, player, msg, Type, lang, group)
 	}
 	for i = 0, 10 do
 		item:ClearEnchantment(i)
-		item:SetEnchantment(x[i + 10], i)
+		item:SetEnchantment(x[i + 15], i)
 	end
 end
 
--- RegisterPlayerEvent(20, testFn)
+-- RegisterPlayerEvent(29, testFn)
 RegisterPlayerEvent(42, reloadElunaEngine)
