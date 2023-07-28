@@ -99,15 +99,16 @@ https://github.com/trickerer/mod-autobalance
 
 # run for i=70800,70899 do SendChatMessage('.npcb spawn '..i) end # Winterspring
 # run for i=70900,70999 do SendChatMessage('.npcb spawn '..i) end # Hyjal
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
-# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71099 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71100,71199 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71200,71299 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71300,71399 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71400,71499 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71500,71599 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71600,71699 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71700,71799 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71800,71899 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71900,71999 do SendChatMessage('.npcb spawn '..i) end
 
 # ahbotoptions minitems 2 20000
 # ahbotoptions maxitems 2 20000
