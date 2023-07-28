@@ -89,7 +89,6 @@ https://github.com/azerothcore/mod-solo-lfg
 https://github.com/trickerer/mod-autobalance
 '
 
-# 100000 promotion
 # 199999 profession
 # 70000 hire
 
