@@ -388,7 +388,7 @@ b.forEach((cr, i) => {
     for (let k = 0; k < 2; k++) {
       count += 1;
       cmds.push(
-        `node cmd.js ".npcbot createnew Az${nto26(count)} ${cr[0]} ${
+        `node cmd.js ".npcbot createnew A${nto26(count)} ${cr[0]} ${
           cr[1]
         } ${k} 0 0 0 0 0"`
       );

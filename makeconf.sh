@@ -100,6 +100,14 @@ https://github.com/trickerer/mod-autobalance
 # run for i=70800,70899 do SendChatMessage('.npcb spawn '..i) end # Winterspring
 # run for i=70900,70999 do SendChatMessage('.npcb spawn '..i) end # Hyjal
 # run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
+# run for i=71000,71159 do SendChatMessage('.npcb spawn '..i) end
 
 # ahbotoptions minitems 2 20000
 # ahbotoptions maxitems 2 20000
