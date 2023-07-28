@@ -92,12 +92,9 @@ https://github.com/trickerer/mod-autobalance
 # 199999 profession
 # 70000 hire
 
-# node test.js 'account create hanmeimei helloworld'
-# node test.js 'account set gmlevel hanmeimei 3 -1'
-# ('a'..'z').to_a.sample(12).join
-
-# run for i=70800,70899 do SendChatMessage('.npcb spawn '..i) end # Winterspring
-# run for i=70900,70999 do SendChatMessage('.npcb spawn '..i) end # Hyjal
+# Hyjal
+# run for i=70800,70899 do SendChatMessage('.npcb spawn '..i) end
+# run for i=70900,70999 do SendChatMessage('.npcb spawn '..i) end
 # run for i=71000,71099 do SendChatMessage('.npcb spawn '..i) end
 # run for i=71100,71199 do SendChatMessage('.npcb spawn '..i) end
 # run for i=71200,71299 do SendChatMessage('.npcb spawn '..i) end
