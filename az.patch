@@ -1,0 +1,26 @@
+diff --git a/src/server/game/AI/NpcBots/botgiver.cpp b/src/server/game/AI/NpcBots/botgiver.cpp
+index c4737a0c0..d24b5aec1 100644
+--- a/src/server/game/AI/NpcBots/botgiver.cpp
++++ b/src/server/game/AI/NpcBots/botgiver.cpp
+@@ -181,6 +181,11 @@ public:
+                     //go through bots map to find what bots are available
+                     std::unique_lock<std::shared_mutex> lock(*BotDataMgr::GetLock());
+                     NpcBotRegistry const& allBots = BotDataMgr::GetExistingNPCBots();
++                    std::map<int, int> rgCount;
++                    for (int irace = RACE_HUMAN; irace < MAX_RACES; irace++) {
++                        rgCount[irace * 100 + GENDER_MALE] = 0;
++                        rgCount[irace * 100 + GENDER_FEMALE] = 0;
++                    }
+                     for (NpcBotRegistry::const_iterator ci = allBots.begin(); ci != allBots.end(); ++ci)
+                     {
+                         Creature const* bot = *ci;
+@@ -191,6 +196,9 @@ public:
+                             !(bot->GetRaceMask() & ((player->GetRaceMask() & RACEMASK_ALLIANCE) ? RACEMASK_ALLIANCE : RACEMASK_HORDE)))
+                             continue;
+ 
++                        rgCount[100 * bot->GetRace() + bot->GetGender()] += 1;
++                        if (rgCount[100 * bot->GetRace() + bot->GetGender()] > 2) continue;
++
+                         std::ostringstream message1;
+                         message1 << bot_ai::LocalizedNpcText(player, BOT_TEXT_BOTGIVER_WISH_TO_HIRE_) << bot->GetName() << '?';
+ 
