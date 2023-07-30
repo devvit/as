@@ -34,7 +34,6 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 200 #/g' $f
     perl -pi -e 's/^NpcBot.WanderingBots.BG.Enable(\s*)=/NpcBot.WanderingBots.BG.Enable = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Botgiver.FilterRaces(\s*)=/NpcBot.Botgiver.FilterRaces = 1 #/g' $f
-    perl -pi -e 's/^NpcBot.HealTargetIconMask(\s*)=/NpcBot.HealTargetIconMask = 1 #/g' $f
 
     perl -pi -e 's/^AOELoot.MailEnable(\s*)=/AOELoot.MailEnable = 0 #/g' $f
 
@@ -72,6 +71,7 @@ for distfile in $(ls ./etc/**/*.dist); do
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
+echo 'NpcBot.HealTargetIconsMask = 1' >>./etc/worldserver.conf
 
 mods='
 https://github.com/azerothcore/mod-1v1-arena
