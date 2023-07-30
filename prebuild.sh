@@ -11,6 +11,10 @@ cd ../modules/mod-ah-bot
 git stash
 git apply $install_dir/ahbot.patch
 
+cd $current_dir/..
+git stash
+git apply $install_dir/ac.patch
+
 cd $current_dir
 
 export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
@@ -26,4 +30,3 @@ cmake .. \
     -DOPENSSL_INCLUDE_DIR="$OPENSSL_ROOT_DIR/include" \
     -DOPENSSL_SSL_LIBRARIES="$OPENSSL_ROOT_DIR/lib/libssl.dylib" \
     -DOPENSSL_CRYPTO_LIBRARIES="$OPENSSL_ROOT_DIR/lib/libcrypto.dylib"
-
