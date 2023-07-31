@@ -34,6 +34,7 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^NpcBot.WanderingBots.Continents.Count(\s*)=/NpcBot.WanderingBots.Continents.Count = 200 #/g' $f
     perl -pi -e 's/^NpcBot.WanderingBots.BG.Enable(\s*)=/NpcBot.WanderingBots.BG.Enable = 1 #/g' $f
     perl -pi -e 's/^NpcBot.Botgiver.FilterRaces(\s*)=/NpcBot.Botgiver.FilterRaces = 1 #/g' $f
+    perl -pi -e 's/^NpcBot.HealTargetIconMask(\s*)=/NpcBot.HealTargetIconMask = 1 #/g' $f
 
     perl -pi -e 's/^AOELoot.MailEnable(\s*)=/AOELoot.MailEnable = 0 #/g' $f
 
