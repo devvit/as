@@ -69,6 +69,16 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e "s/^AutoBalance.StatModifierRaid.Boss.Global(\s*)=/AutoBalance.StatModifierRaid.Boss.Global = $hard #/g" $f
     perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Global = $hard #/g" $f
     perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Boss.Global = $hard #/g" $f
+
+    perl -pi -e 's/^ChallengeModes.Enable(\s*)=/ChallengeModes.Enable = 1 #/g' $f
+    perl -pi -e 's/^Hardcore.Enable(\s*)=/Hardcore.Enable = 1 #/g' $f
+    perl -pi -e 's/^SemiHardcore.Enable(\s*)=/SemiHardcore.Enable = 0 #/g' $f
+    perl -pi -e 's/^SelfCrafted.Enable(\s*)=/SelfCrafted.Enable = 0 #/g' $f
+    perl -pi -e 's/^ItemQualityLevel.Enable(\s*)=/ItemQualityLevel.Enable = 0 #/g' $f
+    perl -pi -e 's/^SlowXpGain.Enable(\s*)=/SlowXpGain.Enable = 0 #/g' $f
+    perl -pi -e 's/^VerySlowXpGain.Enable(\s*)=/VerySlowXpGain.Enable = 0 #/g' $f
+    perl -pi -e 's/^QuestXpOnly.Enable(\s*)=/QuestXpOnly.Enable = 0 #/g' $f
+    perl -pi -e 's/^IronMan.Enable(\s*)=/IronMan.Enable = 0 #/g' $f
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
