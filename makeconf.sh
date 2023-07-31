@@ -88,6 +88,7 @@ https://github.com/azerothcore/mod-random-enchants
 https://github.com/azerothcore/mod-skip-dk-starting-area
 https://github.com/azerothcore/mod-solo-lfg
 https://github.com/trickerer/mod-autobalance
+https://github.com/azerothcore/mod-instance-reset
 '
 
 # 199999 profession
