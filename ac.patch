@@ -19,7 +19,7 @@ index c4737a0c0..d24b5aec1 100644
                              continue;
  
 +                        rgCount[100 * bot->GetRace() + bot->GetGender()] += 1;
-+                        if (rgCount[100 * bot->GetRace() + bot->GetGender()] > 2) continue;
++                        if (rgCount[100 * bot->GetRace() + bot->GetGender()] > 1) continue;
 +
                          std::ostringstream message1;
                          message1 << bot_ai::LocalizedNpcText(player, BOT_TEXT_BOTGIVER_WISH_TO_HIRE_) << bot->GetName() << '?';
