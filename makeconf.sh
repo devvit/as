@@ -2,8 +2,8 @@
 
 shopt -s globstar
 
-pick=100
-hard=0.1
+pick=1
+hard=1
 winitems='\"49426:300 47241:300 45624:300 40753:300 40752:300 29434:300\"'
 tieitems='\"49426:200 47241:200 45624:200 40753:200 40752:200 29434:200\"'
 defitems='\"49426:100 47241:100 45624:100 40753:100 40752:100 29434:100\"'
@@ -15,6 +15,7 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/127.0.0.1;3306;acore;acore;/127.0.0.1;4306;acore;acore;/g' $f
     perl -pi -e 's/^DataDir(\s*)=/DataDir = ".\/data" #/g' $f
     perl -pi -e 's/^SOAP.Enabled(\s*)=/SOAP.Enabled = 1 #/g' $f
+    perl -pi -e 's/^EnablePlayerSettings(\s*)=/EnablePlayerSettings = 1 #/g' $f
 
     perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $pick #/g" $f
     perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $pick #/g" $f
@@ -85,6 +86,7 @@ echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
 echo 'NpcBot.HealTargetIconsMask = 1' >>./etc/worldserver.conf
 
 mods='
+https://github.com/ZhengPeiRu21/mod-challenge-modes
 https://github.com/azerothcore/mod-1v1-arena
 https://github.com/azerothcore/mod-ah-bot
 https://github.com/azerothcore/mod-aoe-loot
@@ -92,6 +94,7 @@ https://github.com/azerothcore/mod-better-item-reloading
 https://github.com/azerothcore/mod-bg-item-reward
 https://github.com/azerothcore/mod-cta-switch
 https://github.com/azerothcore/mod-eluna
+https://github.com/azerothcore/mod-instance-reset
 https://github.com/azerothcore/mod-learn-highest-talent
 https://github.com/azerothcore/mod-learn-spells
 https://github.com/azerothcore/mod-npc-free-professions
@@ -99,7 +102,6 @@ https://github.com/azerothcore/mod-random-enchants
 https://github.com/azerothcore/mod-skip-dk-starting-area
 https://github.com/azerothcore/mod-solo-lfg
 https://github.com/trickerer/mod-autobalance
-https://github.com/azerothcore/mod-instance-reset
 '
 
 # 199999 profession
