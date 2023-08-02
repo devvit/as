@@ -124,4 +124,4 @@ https://github.com/trickerer/mod-autobalance
 
 # ahbotoptions minitems 2 20000
 # ahbotoptions maxitems 2 20000
-# ahbotoptions percentages 2 0 15 5 15 15 0 0 0 15 5 15 15 0 0
+# ahbotoptions percentages 2 0 15 15 15 5 0 0 0 15 15 15 5 0 0
