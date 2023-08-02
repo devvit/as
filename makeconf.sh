@@ -80,8 +80,6 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^VerySlowXpGain.Enable(\s*)=/VerySlowXpGain.Enable = 0 #/g' $f
     perl -pi -e 's/^QuestXpOnly.Enable(\s*)=/QuestXpOnly.Enable = 0 #/g' $f
     perl -pi -e 's/^IronMan.Enable(\s*)=/IronMan.Enable = 0 #/g' $f
-
-    perl -pi -e 's/^AiPlayerbot.RandomBotAutoJoinBG(\s*)=/AiPlayerbot.RandomBotAutoJoinBG = 1 #/g' $f
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
