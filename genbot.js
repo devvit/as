@@ -383,7 +383,7 @@ const cmds = [];
 let count = 0;
 b.forEach((cr, i) => {
   // per class+race
-  for (let j = 0; j < 10; j++) {
+  for (let j = 0; j < 3; j++) {
     // gender
     for (let k = 0; k < 2; k++) {
       count += 1;
