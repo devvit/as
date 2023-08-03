@@ -1,5 +1,5 @@
 diff --git a/src/AuctionHouseBot.cpp b/src/AuctionHouseBot.cpp
-index 8ce56cb..9a18109 100644
+index 8ce56cb..d39fb73 100644
 --- a/src/AuctionHouseBot.cpp
 +++ b/src/AuctionHouseBot.cpp
 @@ -398,6 +398,14 @@ void AuctionHouseBot::addNewAuctions(Player *AHBplayer, AHBConfig *config)
@@ -31,7 +31,7 @@ index 8ce56cb..9a18109 100644
 +                uint32 proItemID = fields[0].Get<uint32>();
 +                ItemTemplate const* proItem = sObjectMgr->GetItemTemplate(proItemID);
 +                if (proItem == NULL) continue;
-+                if (proItem->Quality > AHB_BLUE) continue;
++                if (proItem->Quality > AHB_PURPLE) continue;
 +                greenTradeGoodsBin.push_back(proItemID);
 +
 +            } while (proResults->NextRow());
