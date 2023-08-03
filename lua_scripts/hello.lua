@@ -8,37 +8,12 @@ end
 
 function testFn(event, player, item, bag, slot)
 	player:Say("hello world", 0)
-	local item = player:GetEquippedItemBySlot(15)
-	local x = {
-		208,
-		209,
-		210,
-		211,
-		212,
-		215,
-		216,
-		217,
-		218,
-		219,
-		222,
-		223,
-		224,
-		225,
-		226,
-		229,
-		230,
-		231,
-		232,
-		233,
-		236,
-		237,
-		238,
-	}
-	for i = 0, 10 do
-		item:ClearEnchantment(i)
-		item:SetEnchantment(x[i + 15], i)
-	end
+	local x = player:GetX()
+	local y = player:GetY()
+	local z = player:GetZ()
+	local o = player:GetO()
+	player:Say("At " .. x .. " , " .. y .. " , " .. z .. " , " .. o, 0)
 end
 
--- RegisterPlayerEvent(29, testFn)
+RegisterPlayerEvent(29, testFn)
 RegisterPlayerEvent(42, reloadElunaEngine)
