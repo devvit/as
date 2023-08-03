@@ -16,6 +16,8 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^DataDir(\s*)=/DataDir = ".\/data" #/g' $f
     perl -pi -e 's/^SOAP.Enabled(\s*)=/SOAP.Enabled = 1 #/g' $f
     perl -pi -e 's/^EnablePlayerSettings(\s*)=/EnablePlayerSettings = 1 #/g' $f
+    perl -pi -e 's/^Expansion(\s*)=/Expansion = 0 #/g' $f
+    perl -pi -e 's/^MaxPlayerLevel(\s*)=/MaxPlayerLevel = 60 #/g' $f
 
     perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $pick #/g" $f
     perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $pick #/g" $f
