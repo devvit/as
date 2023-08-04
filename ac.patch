@@ -1,5 +1,79 @@
+diff --git a/src/server/game/AI/NpcBots/botcommands.cpp b/src/server/game/AI/NpcBots/botcommands.cpp
+index 320f22e95..d4c371f9f 100644
+--- a/src/server/game/AI/NpcBots/botcommands.cpp
++++ b/src/server/game/AI/NpcBots/botcommands.cpp
+@@ -653,6 +653,7 @@ public:
+             { "remove",     HandleNpcBotRemoveCommand,              rbac::RBAC_PERM_COMMAND_NPCBOT_REMOVE,             Console::No  },
+             { "createnew",  HandleNpcBotCreateNewCommand,           rbac::RBAC_PERM_COMMAND_NPCBOT_CREATENEW,          Console::Yes },
+             { "spawn",      HandleNpcBotSpawnCommand,               rbac::RBAC_PERM_COMMAND_NPCBOT_SPAWN,              Console::No  },
++            { "spawn2",     HandleNpcBotSpawnCommand2,               rbac::RBAC_PERM_COMMAND_NPCBOT_SPAWN,              Console::Yes  },
+             { "move",       HandleNpcBotMoveCommand,                rbac::RBAC_PERM_COMMAND_NPCBOT_MOVE,               Console::No  },
+             { "delete",     npcbotDeleteCommandTable                                                                                },
+             { "lookup",     HandleNpcBotLookupCommand,              rbac::RBAC_PERM_COMMAND_NPCBOT_LOOKUP,             Console::Yes },
+@@ -3088,6 +3089,61 @@ public:
+         return true;
+     }
+ 
++    static bool HandleNpcBotSpawnCommand2(ChatHandler* handler, Optional<uint32> xid) {
++        if (!xid) return false;
++
++        uint32 id = uint32(*xid);
++
++        CreatureTemplate const* creInfo = sObjectMgr->GetCreatureTemplate(id);
++
++        if (!creInfo) return false;
++
++        if (!creInfo->IsNPCBot()) return false;
++
++        if (id == BOT_ENTRY_MIRROR_IMAGE_BM) return false;
++
++        if (BotDataMgr::SelectNpcBotData(id)) return false;
++
++        WorldDatabasePreparedStatement* stmt = WorldDatabase.GetPreparedStatement(WORLD_SEL_CREATURE_BY_ID);
++        stmt->SetArguments(id, id, id);
++        PreparedQueryResult res2 = WorldDatabase.Query(stmt);
++        if (res2) return false;
++
++        Map* map = sMapMgr->FindMap(0, 0);
++
++        Creature* creature = new Creature();
++        if (!creature->Create(map->GenerateLowGuid<HighGuid::Unit>(), map, PHASEMASK_NORMAL, id, 0,
++                    -8929.1142578125 , -121.37354278564 , 81.888092041016 , 6.1339588165283))
++        {
++            delete creature;
++            return false;
++        }
++
++        NpcBotExtras const* _botExtras = BotDataMgr::SelectNpcBotExtras(id);
++        if (!_botExtras)
++        {
++            delete creature;
++            return false;
++        }
++
++        uint8 bot_spec = bot_ai::SelectSpecForClass(_botExtras->bclass);
++        BotDataMgr::AddNpcBotData(id, bot_ai::DefaultRolesForClass(_botExtras->bclass, bot_spec), bot_spec,
++creature->GetCreatureTemplate()->faction);
++
++        creature->SaveToDB(map->GetId(), (1 << map->GetSpawnMode()), PHASEMASK_NORMAL);
++
++        uint32 db_guid = creature->GetSpawnId();
++        if (!creature->LoadBotCreatureFromDB(db_guid, map))
++        {
++            delete creature;
++            return false;
++        }
++
++        sObjectMgr->AddCreatureToGrid(db_guid, sObjectMgr->GetCreatureData(db_guid));
++
++        return true;
++    }
++
+     static bool HandleNpcBotSpawnCommand(ChatHandler* handler, Optional<std::string> creVal)
+     {
+         if (!creVal)
 diff --git a/src/server/game/AI/NpcBots/botgiver.cpp b/src/server/game/AI/NpcBots/botgiver.cpp
-index c4737a0c0..d24b5aec1 100644
+index c4737a0c0..f99f01377 100644
 --- a/src/server/game/AI/NpcBots/botgiver.cpp
 +++ b/src/server/game/AI/NpcBots/botgiver.cpp
 @@ -181,6 +181,11 @@ public:
