@@ -136,3 +136,7 @@ https://github.com/trickerer/mod-autobalance
 #  Map: 0 (东 部王国) Area: 2397 (无尽之海) Zone: 267 (希尔斯布莱德丘陵) Selected:  (GUID Full: 0x0000000000000000 Type: None Low: 0)]
 # -1209.2574462891  1388.7039794922  54.492282867432
 # -1022.7560424805  1398.6380615234  54.642925262451
+# DELETE FROM `mod_mko_map_lock` WHERE `mapId`=571 AND `zoneID` IN (65, 3537);
+# INSERT INTO `mod_mko_map_lock` (`mapId`, `zoneID`, `comment`) VALUES
+# (571, 65, 'Dragonblight'),
+# (571, 3537, 'Borean Tundra');
