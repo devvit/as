@@ -20,6 +20,6 @@ function onEmote(event, player, textEmote, emoteNum, guid)
 	print("At " .. mapid .. " " .. x .. " " .. y .. " " .. z .. " " .. o)
 end
 
-RegisterPlayerEvent(24, onEmote)
+-- RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
 RegisterPlayerEvent(42, reloadElunaEngine)
