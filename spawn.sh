@@ -27,7 +27,7 @@ pointCount=${#points[@]}
 
 for i in {70800..71999}; do
   n=$(($i % $pointCount))
-  echo node cmd.js ".npcbot spawnto $i ${points[$n]} 0"
+  node cmd.js ".npcbot spawnto $i ${points[$n]} 0"
   # echo ${points[$n]}
   # echo $n
 done
