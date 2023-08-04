@@ -1,5 +1,5 @@
 diff --git a/src/server/game/AI/NpcBots/botcommands.cpp b/src/server/game/AI/NpcBots/botcommands.cpp
-index 320f22e95..490787eac 100644
+index 320f22e95..88da8bbb3 100644
 --- a/src/server/game/AI/NpcBots/botcommands.cpp
 +++ b/src/server/game/AI/NpcBots/botcommands.cpp
 @@ -676,6 +676,7 @@ public:
@@ -16,7 +16,7 @@ index 320f22e95..490787eac 100644
      }
 +
 +    static bool HandleNpcBotSpawnCommand2(ChatHandler* handler, Optional<uint32> botid,
-+            Optional<uint32> mapid, Optional<int32> x, Optional<int32> y, Optional<int32> z, Optional<int32> o) {
++            Optional<uint32> mapid, Optional<float> x, Optional<float> y, Optional<float> z, Optional<float> o) {
 +        if (!botid || !mapid || !x || !y || !z || !o) return false;
 +
 +        uint32 id = uint32(*botid);
@@ -40,7 +40,7 @@ index 320f22e95..490787eac 100644
 +
 +        Creature* creature = new Creature();
 +        if (!creature->Create(map->GenerateLowGuid<HighGuid::Unit>(), map, PHASEMASK_NORMAL, id, 0,
-+                    int32(*x), int32(*y), int32(*z), int32(*o)))
++                    float(*x), float(*y), float(*z), float(*o)))
 +        {
 +            delete creature;
 +            return false;

@@ -14,7 +14,7 @@ function testFn(event, player, item, bag, slot)
 	local o = player:GetO()
 	local mapid = player:GetMapId()
 	player:Say("At " .. mapid .. " , " .. x .. " , " .. y .. " , " .. z .. " , " .. o, 0)
-	print("At " .. x .. " , " .. y .. " , " .. z .. " , " .. o)
+	print("At " .. x .. "  " .. y .. "  " .. z .. "  " .. o)
 	-- local godness = GetPlayerByName("Playa")
 	-- player:Say(godness:GetX(), 0)
 end
