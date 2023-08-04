@@ -9,7 +9,7 @@ function AzerothCore_Soap(command) {
       {
         port: 7878,
         method: 'POST',
-        hostname: 'localhost',
+        hostname: '127.0.0.1',
         auth: 'admin0:adminpwd',
         headers: { 'Content-Type': 'application/xml' },
       },
