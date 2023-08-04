@@ -97,6 +97,7 @@ https://github.com/azerothcore/mod-bg-item-reward
 https://github.com/azerothcore/mod-cta-switch
 https://github.com/azerothcore/mod-eluna
 https://github.com/azerothcore/mod-instance-reset
+https://github.com/azerothcore/mod-keep-out
 https://github.com/azerothcore/mod-learn-highest-talent
 https://github.com/azerothcore/mod-learn-spells
 https://github.com/azerothcore/mod-npc-free-professions
