@@ -1,12 +1,12 @@
 diff --git a/src/server/game/AI/NpcBots/botcommands.cpp b/src/server/game/AI/NpcBots/botcommands.cpp
-index 320f22e95..afbbe49a9 100644
+index 320f22e95..e2688d966 100644
 --- a/src/server/game/AI/NpcBots/botcommands.cpp
 +++ b/src/server/game/AI/NpcBots/botcommands.cpp
 @@ -676,6 +676,7 @@ public:
              { "vehicle",    npcbotVehicleCommandTable                                                                               },
              { "dump",       npcbotDumpCommandTable                                                                                  },
              { "wp",         npcbotWPCommandTable                                                                                    },
-+            { "coord",     HandleNpcBotSpawnCommand2,               rbac::RBAC_PERM_COMMAND_NPCBOT_SPAWN,              Console::Yes  },
++            { "spawnto",     HandleNpcBotSpawnCommand2,               rbac::RBAC_PERM_COMMAND_NPCBOT_SPAWN,              Console::Yes  },
          };
  
          static ChatCommandTable commandTable =
