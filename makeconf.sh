@@ -127,3 +127,14 @@ https://github.com/trickerer/mod-autobalance
 # ahbotoptions minitems 2 20000
 # ahbotoptions maxitems 2 20000
 # ahbotoptions percentages 2 0 15 15 20 0 0 0 0 15 15 20 0 0 0
+
+# gilneas
+
+# -987.06799316406  1579.9499511719  53.671298980713
+# gps [Player: Playa (GUID Full: 0x0000000000000001 Type: Player Low: 1) (Account: 1) X: -987.068 Y: 1579.95 Z: 53.6713
+#  Map: 0 (东 部王国) Area: 2397 (无尽之海) Zone: 267 (希尔斯布莱德丘陵) Selected:  (GUID Full: 0x0000000000000000 Type: None Low: 0)]
+
+# -1218.4548339844  1381.1948242188  59.790428161621
+# gps [Player: Playa (GUID Full: 0x0000000000000001 Type: Player Low: 1) (Account: 1)
+# X: -1218.4548 Y: 1381.1948 Z: 59.79043 Map: 0 (东部王国)
+# Area: 2397 (无尽之海) Zone: 267 (希尔斯布莱德丘陵) Selected:  (GUID Full: 0x0000000000000000 Type: None Low: 0)]
