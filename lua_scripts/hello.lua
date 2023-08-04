@@ -17,7 +17,7 @@ function onEmote(event, player, textEmote, emoteNum, guid)
 	local o = player:GetO()
 	local mapid = player:GetMapId()
 	player:Say("At " .. mapid .. " , " .. x .. " , " .. y .. " , " .. z .. " , " .. o, 0)
-	print("At " .. x .. "  " .. y .. "  " .. z .. "  " .. o)
+	print("At " .. mapid .. " " .. x .. " " .. y .. " " .. z .. " " .. o)
 end
 
 RegisterPlayerEvent(24, onEmote)
