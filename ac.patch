@@ -1,5 +1,5 @@
 diff --git a/src/server/game/AI/NpcBots/botcommands.cpp b/src/server/game/AI/NpcBots/botcommands.cpp
-index 320f22e95..88da8bbb3 100644
+index 320f22e95..afbbe49a9 100644
 --- a/src/server/game/AI/NpcBots/botcommands.cpp
 +++ b/src/server/game/AI/NpcBots/botcommands.cpp
 @@ -676,6 +676,7 @@ public:
@@ -10,7 +10,7 @@ index 320f22e95..88da8bbb3 100644
          };
  
          static ChatCommandTable commandTable =
-@@ -4182,6 +4183,63 @@ public:
+@@ -4182,6 +4183,94 @@ public:
          handler->SendGlobalGMSysMessage("NpcBot config settings reloaded.");
          return true;
      }
@@ -23,18 +23,43 @@ index 320f22e95..88da8bbb3 100644
 +
 +        CreatureTemplate const* creInfo = sObjectMgr->GetCreatureTemplate(id);
 +
-+        if (!creInfo) return false;
++        if (!creInfo) {
++            handler->PSendSysMessage("creature %u does not exist!", id);
++            handler->SetSentErrorMessage(true);
++            return false;
++        }
 +
-+        if (!creInfo->IsNPCBot()) return false;
++        if (!creInfo->IsNPCBot())
++        {
++            handler->PSendSysMessage("creature %u is not a npcbot!", id);
++            handler->SetSentErrorMessage(true);
++            return false;
++        }
 +
-+        if (id == BOT_ENTRY_MIRROR_IMAGE_BM) return false;
++        if (id == BOT_ENTRY_MIRROR_IMAGE_BM)
++        {
++            handler->PSendSysMessage("creature %u is a mirror image and cannot be spawned!", id);
++            handler->SetSentErrorMessage(true);
++            return false;
++        }
 +
-+        if (BotDataMgr::SelectNpcBotData(id)) return false;
++        if (BotDataMgr::SelectNpcBotData(id))
++        {
++            handler->PSendSysMessage("Npcbot %u already exists in `characters_npcbot` table!", id);
++            handler->SendSysMessage("If you want to move this bot to a new location use '.npcbot move' command");
++            handler->SetSentErrorMessage(true);
++            return false;
++        }
 +
 +        WorldDatabasePreparedStatement* stmt = WorldDatabase.GetPreparedStatement(WORLD_SEL_CREATURE_BY_ID);
 +        stmt->SetArguments(id, id, id);
 +        PreparedQueryResult res2 = WorldDatabase.Query(stmt);
-+        if (res2) return false;
++        if (res2)
++        {
++            handler->PSendSysMessage("Npcbot %u already exists in `creature` table!", id);
++            handler->SetSentErrorMessage(true);
++            return false;
++        }
 +
 +        Map* map = sMapMgr->FindMap(*mapid, 0);
 +
@@ -43,6 +68,8 @@ index 320f22e95..88da8bbb3 100644
 +                    float(*x), float(*y), float(*z), float(*o)))
 +        {
 +            delete creature;
++            handler->SendSysMessage("Creature is not created!");
++            handler->SetSentErrorMessage(true);
 +            return false;
 +        }
 +
@@ -50,6 +77,8 @@ index 320f22e95..88da8bbb3 100644
 +        if (!_botExtras)
 +        {
 +            delete creature;
++            handler->PSendSysMessage("No class/race data found for bot %u!", id);
++            handler->SetSentErrorMessage(true);
 +            return false;
 +        }
 +
@@ -63,6 +92,8 @@ index 320f22e95..88da8bbb3 100644
 +        if (!creature->LoadBotCreatureFromDB(db_guid, map))
 +        {
 +            delete creature;
++            handler->SendSysMessage("Cannot load npcbot from DB!");
++            handler->SetSentErrorMessage(true);
 +            return false;
 +        }
 +
