@@ -10,7 +10,7 @@ function onEquip(event, player, item, bag, slot)
 	player:Say("hello world", 0)
 end
 
-function onEmote(event, player, emote)
+function onEmote(event, player, textEmote, emoteNum, guid)
 	local x = player:GetX()
 	local y = player:GetY()
 	local z = player:GetZ()
@@ -20,6 +20,6 @@ function onEmote(event, player, emote)
 	print("At " .. x .. "  " .. y .. "  " .. z .. "  " .. o)
 end
 
-RegisterPlayerEvent(23, onEmote)
+RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
 RegisterPlayerEvent(42, reloadElunaEngine)
