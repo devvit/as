@@ -1,14 +1,16 @@
 diff --git a/src/AuctionHouseBot.cpp b/src/AuctionHouseBot.cpp
-index 8ce56cb..cbf4d15 100644
+index 8ce56cb..0260e1a 100644
 --- a/src/AuctionHouseBot.cpp
 +++ b/src/AuctionHouseBot.cpp
-@@ -398,6 +398,14 @@ void AuctionHouseBot::addNewAuctions(Player *AHBplayer, AHBConfig *config)
+@@ -398,6 +398,16 @@ void AuctionHouseBot::addNewAuctions(Player *AHBplayer, AHBConfig *config)
                  continue;
              }
  
-+            if (prototype->Class == ITEM_CLASS_ARMOR || prototype->Class == ITEM_CLASS_WEAPON) {
-+                buyoutPrice += 10000000000;
-+                bidPrice += 10000000000;
++            if (prototype->Quality > AHB_BLUE) {
++                if (prototype->Class == ITEM_CLASS_ARMOR || prototype->Class == ITEM_CLASS_WEAPON) {
++                    buyoutPrice += 10000000000;
++                    bidPrice += 10000000000;
++                }
 +            }
 +
 +            if (buyoutPrice == 0) buyoutPrice += 1000000;
@@ -17,7 +19,7 @@ index 8ce56cb..cbf4d15 100644
              uint32 etime = urand(1,3);
              switch(etime)
              {
-@@ -1316,6 +1324,22 @@ void AuctionHouseBot::Initialize()
+@@ -1316,6 +1326,22 @@ void AuctionHouseBot::Initialize()
              }
          }
  
