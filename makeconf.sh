@@ -2,8 +2,8 @@
 
 shopt -s globstar
 
-pick=100
-hard=1
+prize=100
+power=0.5
 winitems='\"49426:300 47241:300 45624:300 40753:300 40752:300 29434:300\"'
 tieitems='\"49426:200 47241:200 45624:200 40753:200 40752:200 29434:200\"'
 defitems='\"49426:100 47241:100 45624:100 40753:100 40752:100 29434:100\"'
@@ -19,16 +19,16 @@ for distfile in $(ls ./etc/**/*.dist); do
     # perl -pi -e 's/^Expansion(\s*)=/Expansion = 0 #/g' $f
     # perl -pi -e 's/^MaxPlayerLevel(\s*)=/MaxPlayerLevel = 60 #/g' $f
 
-    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $pick #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $pick #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $pick #/g" $f
-    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $pick #/g" $f
-    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $pick #/g" $f
-    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $pick #/g" $f
-    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $pick #/g" $f
-    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $pick #/g" $f
-    # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $pick #/g" $f
-    # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $pick #/g" $f
+    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $prize #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $prize #/g" $f
+    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $prize #/g" $f
+    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $prize #/g" $f
+    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $prize #/g" $f
+    perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $prize #/g" $f
+    perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $prize #/g" $f
+    perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $prize #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.ReferencedAmount(\s*)=/Rate.Drop.Item.ReferencedAmount = $prize #/g" $f
+    # perl -pi -e "s/^Rate.Drop.Item.GroupAmount(\s*)=/Rate.Drop.Item.GroupAmount = $prize #/g" $f
 
     perl -pi -e 's/^NpcBot.MaxBots(\s*)=/NpcBot.MaxBots = 39 #/g' $f
     perl -pi -e 's/^NpcBot.Enable.Raid(\s*)=/NpcBot.Enable.Raid = 1 #/g' $f
@@ -64,14 +64,14 @@ for distfile in $(ls ./etc/**/*.dist); do
 
     perl -pi -e 's/^ModCTASwitch.Enable(\s*)=/ModCTASwitch.Enable = 1 #/g' $f
 
-    perl -pi -e "s/^AutoBalance.StatModifier.Global(\s*)=/AutoBalance.StatModifier.Global = $hard #/g" $f
-    perl -pi -e "s/^AutoBalance.StatModifier.Boss.Global(\s*)=/AutoBalance.StatModifier.Boss.Global = $hard #/g" $f
-    perl -pi -e "s/^AutoBalance.StatModifierHeroic.Global(\s*)=/AutoBalance.StatModifierHeroic.Global = $hard #/g" $f
-    perl -pi -e "s/^AutoBalance.StatModifierHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierHeroic.Boss.Global = $hard #/g" $f
-    perl -pi -e "s/^AutoBalance.StatModifierRaid.Global(\s*)=/AutoBalance.StatModifierRaid.Global = $hard #/g" $f
-    perl -pi -e "s/^AutoBalance.StatModifierRaid.Boss.Global(\s*)=/AutoBalance.StatModifierRaid.Boss.Global = $hard #/g" $f
-    perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Global = $hard #/g" $f
-    perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Boss.Global = $hard #/g" $f
+    # perl -pi -e "s/^AutoBalance.StatModifier.Global(\s*)=/AutoBalance.StatModifier.Global = $power #/g" $f
+    # perl -pi -e "s/^AutoBalance.StatModifier.Boss.Global(\s*)=/AutoBalance.StatModifier.Boss.Global = $power #/g" $f
+    # perl -pi -e "s/^AutoBalance.StatModifierHeroic.Global(\s*)=/AutoBalance.StatModifierHeroic.Global = $power #/g" $f
+    # perl -pi -e "s/^AutoBalance.StatModifierHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierHeroic.Boss.Global = $power #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaid.Global(\s*)=/AutoBalance.StatModifierRaid.Global = $power #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaid.Boss.Global(\s*)=/AutoBalance.StatModifierRaid.Boss.Global = $power #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Global = $power #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Boss.Global = $power #/g" $f
 
     perl -pi -e 's/^ChallengeModes.Enable(\s*)=/ChallengeModes.Enable = 1 #/g' $f
     perl -pi -e 's/^Hardcore.Enable(\s*)=/Hardcore.Enable = 1 #/g' $f
