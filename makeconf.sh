@@ -19,11 +19,11 @@ for distfile in $(ls ./etc/**/*.dist); do
     # perl -pi -e 's/^Expansion(\s*)=/Expansion = 0 #/g' $f
     # perl -pi -e 's/^MaxPlayerLevel(\s*)=/MaxPlayerLevel = 60 #/g' $f
 
-    perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $prize #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $prize #/g" $f
-    perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $prize #/g" $f
-    perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $prize #/g" $f
-    perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $prize #/g" $f
+    # perl -pi -e "s/^Rate.XP.Kill(\s*)=/Rate.XP.Kill = $prize #/g" $f
+    # perl -pi -e "s/^Rate.XP.Quest(\s*)=/Rate.XP.Quest = $prize #/g" $f
+    # perl -pi -e "s/^Rate.XP.Quest.DF(\s*)=/Rate.XP.Quest.DF = $prize #/g" $f
+    # perl -pi -e "s/^Rate.XP.Explore(\s*)=/Rate.XP.Explore = $prize #/g" $f
+    # perl -pi -e "s/^Rate.XP.Pet(\s*)=/Rate.XP.Pet = $prize #/g" $f
     perl -pi -e "s/^Rate.Honor(\s*)=/Rate.Honor = $prize #/g" $f
     perl -pi -e "s/^Rate.ArenaPoints(\s*)=/Rate.ArenaPoints = $prize #/g" $f
     perl -pi -e "s/^Rate.Drop.Money(\s*)=/Rate.Drop.Money = $prize #/g" $f
@@ -82,6 +82,8 @@ for distfile in $(ls ./etc/**/*.dist); do
     perl -pi -e 's/^VerySlowXpGain.Enable(\s*)=/VerySlowXpGain.Enable = 0 #/g' $f
     perl -pi -e 's/^QuestXpOnly.Enable(\s*)=/QuestXpOnly.Enable = 0 #/g' $f
     perl -pi -e 's/^IronMan.Enable(\s*)=/IronMan.Enable = 0 #/g' $f
+
+    perl -pi -e 's/^MaxXPRate(\s*)=/MaxXPRate = 100 #/g' $f
 done
 
 echo 'LearnSpells.OnFirstLogin = 0' >>./etc/worldserver.conf
