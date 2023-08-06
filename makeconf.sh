@@ -3,6 +3,7 @@
 shopt -s globstar
 
 prize=100
+force=5.0
 power=0.1
 winitems='\"49426:300 47241:300 45624:300 40753:300 40752:300 29434:300\"'
 tieitems='\"49426:200 47241:200 45624:200 40753:200 40752:200 29434:200\"'
@@ -64,10 +65,10 @@ for distfile in $(ls ./etc/**/*.dist); do
 
     perl -pi -e 's/^ModCTASwitch.Enable(\s*)=/ModCTASwitch.Enable = 1 #/g' $f
 
-    # perl -pi -e "s/^AutoBalance.StatModifier.Global(\s*)=/AutoBalance.StatModifier.Global = $power #/g" $f
-    # perl -pi -e "s/^AutoBalance.StatModifier.Boss.Global(\s*)=/AutoBalance.StatModifier.Boss.Global = $power #/g" $f
-    # perl -pi -e "s/^AutoBalance.StatModifierHeroic.Global(\s*)=/AutoBalance.StatModifierHeroic.Global = $power #/g" $f
-    # perl -pi -e "s/^AutoBalance.StatModifierHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierHeroic.Boss.Global = $power #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifier.Global(\s*)=/AutoBalance.StatModifier.Global = $force #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifier.Boss.Global(\s*)=/AutoBalance.StatModifier.Boss.Global = $force #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierHeroic.Global(\s*)=/AutoBalance.StatModifierHeroic.Global = $force #/g" $f
+    perl -pi -e "s/^AutoBalance.StatModifierHeroic.Boss.Global(\s*)=/AutoBalance.StatModifierHeroic.Boss.Global = $force #/g" $f
     perl -pi -e "s/^AutoBalance.StatModifierRaid.Global(\s*)=/AutoBalance.StatModifierRaid.Global = $power #/g" $f
     perl -pi -e "s/^AutoBalance.StatModifierRaid.Boss.Global(\s*)=/AutoBalance.StatModifierRaid.Boss.Global = $power #/g" $f
     perl -pi -e "s/^AutoBalance.StatModifierRaidHeroic.Global(\s*)=/AutoBalance.StatModifierRaidHeroic.Global = $power #/g" $f
