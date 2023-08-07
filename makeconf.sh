@@ -113,6 +113,7 @@ https://github.com/trickerer/mod-autobalance
 # 199999 profession
 # 70000 hire
 # 300000 reset
+# 999991 1v1
 
 # Hyjal
 # run for i=70800,70899 do SendChatMessage('.npcb spawn '..i) end
