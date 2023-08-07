@@ -1,6 +1,6 @@
 --
 
-local npc_pvp = 92936
+local npc_pvp = 29548
 
 function reloadElunaEngine(event, player, command)
 	if command == "reload scripts" or command == "reloadscripts" then
