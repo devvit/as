@@ -1,6 +1,6 @@
 --
 
-local NPC_pvp = 30885
+local npc_pvp = 92936
 
 function reloadElunaEngine(event, player, command)
 	if command == "reload scripts" or command == "reloadscripts" then
@@ -75,13 +75,13 @@ function onPvPVendorLoaded()
 	-- 2403 40000
 	-- 2570 50000
 	-- 2569 60000
-	VendorRemoveAllItems(NPC_pvp)
+	VendorRemoveAllItems(npc_pvp)
 	for _, weapon in pairs(weapons) do
-		AddVendorItem(NPC_pvp, weapon, 1, 1, 460)
+		AddVendorItem(npc_pvp, weapon, 1, 1, 460)
 	end
 end
 
 -- RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
-RegisterCreatureEvent(NPC_pvp, 5, onPvPVendorLoaded)
+RegisterCreatureEvent(npc_pvp, 5, onPvPVendorLoaded)
 RegisterPlayerEvent(42, reloadElunaEngine)
