@@ -18,15 +18,18 @@ function onEmote(event, player, textEmote, emoteNum, guid)
 	local mapid = player:GetMapId()
 	player:Say("At " .. mapid .. " , " .. x .. " , " .. y .. " , " .. z .. " , " .. o, 0)
 	print("At " .. mapid .. " " .. x .. " " .. y .. " " .. z .. " " .. o)
+end
 
+function onGossip(event, player, object)
 	-- https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130229/ItemExtendedCost
 	VendorRemoveAllItems(30885)
 	AddVendorItem(30885, 42297, 1, 1, 2588)
 	AddVendorItem(30885, 42331, 1, 1, 2588)
 	AddVendorItem(30885, 42332, 1, 1, 2588)
-	AddVendorItem(30885, 51393, 1, 1, 2588)
+	AddVendorItem(30885, 51393, 1, 1, 2590)
 end
 
-RegisterPlayerEvent(24, onEmote)
+-- RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
+-- RegisterCreatureGossipEvent(30885, 1, onGossip)
 RegisterPlayerEvent(42, reloadElunaEngine)
