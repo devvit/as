@@ -20,7 +20,7 @@ function onEmote(event, player, textEmote, emoteNum, guid)
 	print("At " .. mapid .. " " .. x .. " " .. y .. " " .. z .. " " .. o)
 end
 
-function onGossip()
+function onPvPVendorLoaded()
 	-- https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130229/ItemExtendedCost
 	-- 460 1
 	-- 2588 10000
@@ -36,5 +36,5 @@ end
 
 -- RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
-RegisterCreatureEvent(30885, 5, onGossip)
+RegisterCreatureEvent(30885, 5, onPvPVendorLoaded)
 RegisterPlayerEvent(42, reloadElunaEngine)
