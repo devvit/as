@@ -21,6 +21,52 @@ function onEmote(event, player, textEmote, emoteNum, guid)
 end
 
 function onPvPVendorLoaded()
+	local weapons = {
+		42208,
+		42227,
+		42232,
+		42237,
+		42242,
+		42248,
+		42255,
+		42260,
+		42265,
+		42270,
+		42275,
+		42280,
+		42285,
+		42290,
+		42317,
+		42322,
+		42327,
+		42332,
+		42346,
+		42352,
+		42362,
+		42384,
+		42390,
+		42450,
+		42485,
+		42490,
+		42495,
+		42502,
+		42513,
+		42519,
+		42525,
+		42531,
+		42537,
+		42559,
+		42564,
+		42570,
+		44091,
+		44092,
+		44093,
+		44094,
+		44095,
+		44096,
+		44419,
+		44420,
+	}
 	-- https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130229/ItemExtendedCost
 	-- 460 1
 	-- 2588 10000
@@ -28,10 +74,9 @@ function onPvPVendorLoaded()
 	-- 2570 50000
 	-- 2569 60000
 	VendorRemoveAllItems(30885)
-	AddVendorItem(30885, 42297, 1, 1, 460)
-	AddVendorItem(30885, 42331, 1, 1, 460)
-	AddVendorItem(30885, 42332, 1, 1, 460)
-	AddVendorItem(30885, 51393, 1, 1, 460)
+	for _, weapon in pairs(weapons) do
+		AddVendorItem(30885, weapon, 1, 1, 460)
+	end
 end
 
 -- RegisterPlayerEvent(24, onEmote)
