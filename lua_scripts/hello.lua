@@ -71,7 +71,7 @@ function onPvPVendorLoaded()
 	-- 2569 60000
 	VendorRemoveAllItems(npc_pvp)
 	for _, weapon in pairs(weapons) do
-		AddVendorItem(npc_pvp, weapon, 1, 1, 460)
+		AddVendorItem(npc_pvp, weapon, 1, 1, 2588)
 	end
 end
 
