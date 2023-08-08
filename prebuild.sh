@@ -9,7 +9,7 @@ install_dir=$(pwd)
 cd $current_dir
 cd ../modules/mod-ah-bot
 git stash
-git apply $install_dir/ahbot.patch
+git apply $install_dir/ah-bot.patch
 
 cd $current_dir/..
 git stash
