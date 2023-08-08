@@ -77,5 +77,5 @@ end
 
 -- RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
-RegisterCreatureEvent(npc_pvp, 5, onPvPVendorLoaded)
+-- RegisterCreatureEvent(npc_pvp, 5, onPvPVendorLoaded)
 RegisterPlayerEvent(42, reloadElunaEngine)
