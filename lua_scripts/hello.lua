@@ -1,6 +1,10 @@
 --
 
 local npc_pvp = 29548
+local npc_trapjaw_rix = 34095
+local npc_nargle_lashcord = 33936
+local npc_lieutenant_tristia = 34078
+local npc_doris_volanthius = 34060
 
 function reloadElunaEngine(event, player, command)
 	if command == "reload scripts" or command == "reloadscripts" then
@@ -75,7 +79,32 @@ function onPvPVendorLoaded()
 	end
 end
 
+function onPvPVendorLoaded0()
+	local Q = WorldDBQuery(
+		"SELECT item FROM `npc_vendor` WHERE entry IN ("
+			.. npc_trapjaw_rix
+			.. ", "
+			.. npc_nargle_lashcord
+			.. ", "
+			.. npc_lieutenant_tristia
+			.. ", "
+			.. npc_doris_volanthius
+			.. ");"
+	)
+	local update_sql = "UPDATE `npc_vendor` SET ExtendedCost = 2588 WHERE item IN ("
+	if Q then
+		repeat
+			local item = Q:GetUInt32(0)
+			print(item)
+			update_sql = update_sql .. item .. ", "
+		until not Q:NextRow()
+	end
+	update_sql = update_sql .. "-1);"
+	WorldDBQuery(update_sql)
+end
+
 -- RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
 -- RegisterCreatureEvent(npc_pvp, 5, onPvPVendorLoaded)
+RegisterCreatureEvent(npc_trapjaw_rix, 5, onPvPVendorLoaded0)
 RegisterPlayerEvent(42, reloadElunaEngine)

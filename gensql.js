@@ -12,4 +12,5 @@ const sqls = [
 ];
 itemIDs.forEach((itemID) => sqls.push(`(${itemID}),`));
 sqls.push('(2302);');
+
 fs.writeFileSync('./custom.sql', sqls.join('\n'), 'utf8');
