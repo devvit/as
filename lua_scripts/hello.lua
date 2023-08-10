@@ -75,7 +75,7 @@ function onPvPVendorLoaded()
 	end
 end
 
-function onGameStart(event)
+function onConfigLoad(event)
 	local npc_trapjaw_rix = 34095
 	local npc_nargle_lashcord = 33936
 	local npc_lieutenant_tristia = 34078
@@ -106,5 +106,5 @@ end
 -- RegisterPlayerEvent(24, onEmote)
 -- RegisterPlayerEvent(29, onEquip)
 -- RegisterCreatureEvent(npc_pvp, 5, onPvPVendorLoaded)
-RegisterServerEvent(9, onGameStart)
+RegisterServerEvent(9, onConfigLoad)
 RegisterPlayerEvent(42, reloadElunaEngine)
