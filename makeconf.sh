@@ -52,7 +52,7 @@ for distfile in $(ls ./etc/**/*.dist); do
 
     perl -pi -e 's/^Arena1v1.BlockForbiddenTalents(\s*)=/Arena1v1.BlockForbiddenTalents = 0 #/g' $f
 
-    perl -pi -e 's/^ModBGItemReward.Enable(\s*)=/ModBGItemReward.Enable = 1 #/g' $f
+    perl -pi -e 's/^ModBGItemReward.Enable(\s*)=/ModBGItemReward.Enable = 0 #/g' $f
     perl -pi -e "s/^ModBGItemReward.ABWinItems(\s*)=/ModBGItemReward.ABWinItems = $winitems #/g" $f
     perl -pi -e "s/^ModBGItemReward.WSGWinItems(\s*)=/ModBGItemReward.WSGWinItems = $winitems #/g" $f
     perl -pi -e "s/^ModBGItemReward.AVWinItems(\s*)=/ModBGItemReward.AVWinItems = $winitems #/g" $f
