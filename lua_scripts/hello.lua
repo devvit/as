@@ -91,7 +91,7 @@ function onGameStart(event)
 			.. npc_doris_volanthius
 			.. ");"
 	)
-	local update_sql = "UPDATE `npc_vendor` SET ExtendedCost = 2403 WHERE item IN ("
+	local update_sql = "UPDATE `npc_vendor` SET ExtendedCost = 2588 WHERE item IN ("
 	if Q then
 		repeat
 			local item = Q:GetUInt32(0)
