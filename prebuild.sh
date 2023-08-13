@@ -30,3 +30,4 @@ cmake .. \
     -DOPENSSL_INCLUDE_DIR="$OPENSSL_ROOT_DIR/include" \
     -DOPENSSL_SSL_LIBRARIES="$OPENSSL_ROOT_DIR/lib/libssl.dylib" \
     -DOPENSSL_CRYPTO_LIBRARIES="$OPENSSL_ROOT_DIR/lib/libcrypto.dylib"
+
