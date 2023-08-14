@@ -1,0 +1,13 @@
+diff --git a/src/Individual_XP.cpp b/src/Individual_XP.cpp
+index 15fcb35..3840c71 100644
+--- a/src/Individual_XP.cpp
++++ b/src/Individual_XP.cpp
+@@ -201,7 +201,7 @@ public:
+             handler->SetSentErrorMessage(true);
+             return false;
+         }
+-        else if (rate == 0)
++        else if (rate < 0)
+         {
+             handler->PSendSysMessage(ACORE_STRING_MIN_RATE);
+             handler->SetSentErrorMessage(true);
