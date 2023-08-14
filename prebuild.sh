@@ -11,6 +11,11 @@ cd ../modules/mod-ah-bot
 git stash
 git apply $install_dir/ah-bot.patch
 
+cd $current_dir
+cd ../modules/mod-individual-xp
+git stash
+git apply $install_dir/individual-xp.patch
+
 cd $current_dir/..
 git stash
 git apply $install_dir/ac.patch
