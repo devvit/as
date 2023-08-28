@@ -13,7 +13,7 @@ for distfile in $(ls ./etc/**/*.dist); do
     f=$(dirname $distfile)/$(basename $distfile .dist)
     echo cp $distfile $f
     cp $distfile $f
-    perl -pi -e 's/127.0.0.1;3306/127.0.0.1:4306/g' $f
+    perl -pi -e 's/127.0.0.1;3306/127.0.0.1;4306/g' $f
     perl -pi -e 's/^DataDir(\s*)=/DataDir = ".\/data" #/g' $f
     perl -pi -e 's/^SOAP.Enabled(\s*)=/SOAP.Enabled = 1 #/g' $f
     perl -pi -e 's/^EnablePlayerSettings(\s*)=/EnablePlayerSettings = 1 #/g' $f
